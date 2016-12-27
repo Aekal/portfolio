@@ -1,7 +1,7 @@
 # <a href="#">Portfolio</a>
 My portfolio of finished projects
 
-### Projects
+### Projects included
 - Bluebox PSD
 - Restaurant PSD
 - Slot machine game
