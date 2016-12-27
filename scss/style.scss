@@ -13,16 +13,31 @@ header {
 
 	nav {
 		text-align: center;
-	}
+		display: flex;
+		justify-content: center;
+		height: 50px;
 
-	.logo {
-		text-decoration: none;
-		color: #FFFFFF;
-		padding: 10px;
-	}
+		ul {
+			position: fixed;
+			background-color: rgba($black + 50, 0.9);
+			box-shadow: 1px 1px 10px rgba($black, 0.8);
+			border-bottom-right-radius: 6px;
+			border-bottom-left-radius: 6px;
+		}
 
-	li {
-		display: inline-block;
+		li {
+			display: inline-block;
+			border-left: none;
+			&:first-child {
+				border-bottom-left-radius: 6px;
+			}
+			&:last-child {
+				border-bottom-right-radius: 6px;
+			}
+			&:hover {
+				background-color: rgba($black, 0.15);
+			}
+		}
 
 		a {
 			text-decoration: none;
@@ -30,6 +45,7 @@ header {
 			display: inline-block;
 			padding: 10px;
 			font-size: 1.2rem;
+			position: relative;
 
 			&:hover {
 				color: $white - 30;
@@ -37,6 +53,46 @@ header {
 
 			&:focus {
 				color: $white - 60;
+			}
+		}
+	}
+
+	.socials {
+		top: 100px;
+		position: fixed;
+		right: 0;
+
+		li {
+			display: block;
+			margin-top: 5px;
+		}
+
+		a {
+			overflow: hidden;
+			width: 40px;
+			height: 35px;
+			border-bottom-left-radius: 15px;
+			border-top-left-radius: 15px;
+			display: inline-block;
+			text-decoration: none;
+			text-indent: 50px;
+			box-sizing: border-box;
+			font-size: 1.7rem;
+			padding: 5px 8px;
+			color: $white;
+			&:before {
+				float: left;
+				text-indent: 0px;
+			}
+			&.fa-facebook {
+				padding-left: 10px;
+				background-color: #3B5998;
+			}
+			&.fa-github {
+				background-color: $black;
+			}
+			&.fa-linkedin {
+				background-color: #007BB5;
 			}
 		}
 	}
@@ -53,8 +109,12 @@ header {
 			text-align: center;
 			font-size: 5rem;
 			line-height: 6rem;
-			text-shadow: 1px 1px 50px $black;
+			text-shadow: 1px 1px 5px $black, 1px 1px 50px $black;
 		}
 	}
 
+}
+
+main {
+	height: 5000px;
 }
