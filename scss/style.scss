@@ -1,5 +1,6 @@
 @import "reset";
 @import "colors";
+@import "mixins";
 
 html {
 	font-size: 16px;
@@ -56,7 +57,7 @@ header {
 			margin-top: 5px;
 			position: relative;
 			right: -140px;
-			transition: right 0.8s ease;
+			transition: right 0.5s ease;
 			&:hover {
 				right: -25px;
 			}
@@ -82,15 +83,18 @@ header {
 				font-size: 1.7rem;
 			}
 			&.fa-facebook {
+				border: 1px solid rgba($fb - 50, 80%);
 				padding-left: 10px;
-				background-color: #3B5998;
+				background-color: $fb;
 			}
 			&.fa-github {
+				border: 1px solid rgba($black + 60, 80%);
 				text-indent: 30px;
 				background-color: $black;
 			}
 			&.fa-linkedin {
-				background-color: #007BB5;
+				border: 1px solid rgba($linked - 50, 80%);
+				background-color: $linked;
 			}
 		}
 
@@ -100,7 +104,7 @@ header {
 		}
 	}
 
-	.about {
+	.site-title {
 		height: calc(100vh - 100px);
 		display: flex;
 		align-items: center;
@@ -118,5 +122,83 @@ header {
 }
 
 main {
-	height: 5000px;
+	h2 {
+		font-size: 2rem;
+		margin-bottom: 30px;
+	}
+
+	.section-container {
+		width: 80%;
+		max-width: 1300px;
+		margin: 0 auto;
+		padding: 40px 0;
+	}
+}
+
+#o-mnie {
+	background-color: $section1;
+
+	.about {
+		margin: 0 20px;
+		display: flex;
+		justify-content: center;
+	}
+
+	img {
+		width: 192px;
+		height: 192px;
+		border-radius: 100%;
+		border: 4px solid $black + 220;
+	}
+
+	.text-container {
+		margin-left: 30px;
+		padding: 30px 0;
+	}
+
+	p {
+		margin-bottom: 10px;
+		line-height: 22px;
+	}
+
+	.skills {
+		margin-top: 30px;
+
+		h3 {
+			font-size: 1.5rem;
+			text-align: center;
+			margin-bottom: 15px;
+		}
+
+		.skills-container {
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			width: 350px;
+		}
+
+		span {
+			color: $white;
+			padding: 10px;
+			margin: 5px;
+			cursor: pointer;
+			&:nth-child(5n) {
+				@include tile($blue);
+			}
+			&:nth-child(5n+1) {
+				@include tile($orange);
+			}
+			&:nth-child(5n+2) {
+				@include tile($green);
+			}
+			&:nth-child(5n+3) {
+				@include tile($red);
+			}
+			&:nth-child(5n+4) {
+				@include tile($purple);
+			}
+
+		}
+	}
 }

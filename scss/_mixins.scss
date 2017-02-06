@@ -1,0 +1,6 @@
+@mixin tile($color) {
+	background-color: $color;
+	&:hover {
+		background-color: $color + 20;
+	}
+}
