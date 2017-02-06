@@ -3,6 +3,7 @@
 
 html {
 	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
 }
 
 header {
@@ -10,16 +11,12 @@ header {
 	background-size: cover;
 	height: 100vh;
 
-
 	nav {
-		text-align: center;
 		display: flex;
 		justify-content: center;
-		height: 50px;
 
 		ul {
-			position: fixed;
-			background-color: rgba($black + 50, 0.9);
+			background-color: rgba($black + 50, 0.8);
 			box-shadow: 1px 1px 10px rgba($black, 0.8);
 			border-bottom-right-radius: 6px;
 			border-bottom-left-radius: 6px;
@@ -43,57 +40,63 @@ header {
 			text-decoration: none;
 			color: $white;
 			display: inline-block;
-			padding: 10px;
+			padding: 15px;
 			font-size: 1.2rem;
 			position: relative;
-
-			&:hover {
-				color: $white - 30;
-			}
-
-			&:focus {
-				color: $white - 60;
-			}
 		}
 	}
 
 	.socials {
 		top: 100px;
 		position: fixed;
-		right: 0;
+		right: 0px;
 
 		li {
 			display: block;
 			margin-top: 5px;
+			position: relative;
+			right: -140px;
+			transition: right 0.8s ease;
+			&:hover {
+				right: -25px;
+			}
 		}
 
 		a {
+			width: 180px;
 			overflow: hidden;
-			width: 40px;
-			height: 35px;
 			border-bottom-left-radius: 15px;
 			border-top-left-radius: 15px;
 			display: inline-block;
 			text-decoration: none;
-			text-indent: 50px;
+			text-indent: 20px;
 			box-sizing: border-box;
-			font-size: 1.7rem;
 			padding: 5px 8px;
 			color: $white;
 			&:before {
+				font-size: 1.7rem;
 				float: left;
 				text-indent: 0px;
+			}
+			&.fa {
+				font-size: 1.7rem;
 			}
 			&.fa-facebook {
 				padding-left: 10px;
 				background-color: #3B5998;
 			}
 			&.fa-github {
+				text-indent: 30px;
 				background-color: $black;
 			}
 			&.fa-linkedin {
 				background-color: #007BB5;
 			}
+		}
+
+		span {
+			font-family: 'Raleway', sans-serif;
+			font-size: 1.4rem;
 		}
 	}
 
@@ -112,7 +115,6 @@ header {
 			text-shadow: 1px 1px 5px $black, 1px 1px 50px $black;
 		}
 	}
-
 }
 
 main {
