@@ -215,7 +215,21 @@ main {
 			&:nth-child(5n+4) {
 				@include tile($purple);
 			}
-
 		}
+	}
+}
+
+#projekty {
+
+	.projects-container {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	img {
+		margin: 20px;
+		box-shadow: 8px 8px 10px #aaa;
+		border: 1px solid black;
 	}
 }
