@@ -50,6 +50,7 @@ header {
 
 	.socials {
 		top: 100px;
+		z-index: 1;
 		position: fixed;
 		right: 0px;
 
@@ -220,6 +221,7 @@ main {
 }
 
 #projekty {
+	background-color: $section2;
 
 	.projects-container {
 		display: flex;
@@ -304,4 +306,69 @@ main {
 			font-size: 4rem;
 		}
 	}
+}
+
+#kontakt {
+
+	.contact-info {
+		font-size: 1.5rem;
+		p {
+			display: block;
+		}
+
+		a {
+			text-decoration: none;
+			color: $black;
+		}
+	}
+
+	form {
+		max-width: 500px;
+		margin: 0 auto;
+
+		label {
+			font-size: 1.3rem;
+			line-height: 2.5rem;
+		}
+
+		.field {
+			box-sizing: border-box;
+			background-color: $field;
+			font-family: 'Raleway', sans-serif;
+			border-radius: 10px;
+			border: 1px solid $field - 60;
+			font-size: 1rem;
+			display: block;
+			padding: 10px;
+			width: 100%;
+			&:focus {
+				outline: none;
+				border-color: $blue - 20;
+			}
+		}
+
+		button {
+			display: block;
+			margin: 30px auto 20px auto;
+			border: none;
+			background-color: $btn;
+			border-radius: 6px;
+			color: $white;
+			font-size: 1.2rem;
+			padding: 10px;
+			width: 200px;
+			cursor: pointer;
+			&:hover {
+				background-color: $btn - 30;
+			}
+		}
+	}
+}
+
+footer {
+	background-color: #242729;
+	color: $white - 70;
+	text-align: center;
+	padding: 20px;
+	line-height: 1.3rem;
 }
