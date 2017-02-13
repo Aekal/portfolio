@@ -192,7 +192,7 @@ main {
 			display: flex;
 			justify-content: center;
 			flex-wrap: wrap;
-			width: 450px;
+			max-width: 450px;
 		}
 
 		span {
@@ -227,9 +227,81 @@ main {
 		flex-wrap: wrap;
 	}
 
-	img {
+	.project {
+		position: relative;
 		margin: 20px;
-		box-shadow: 8px 8px 10px #aaa;
 		border: 1px solid black;
+		box-shadow: 8px 8px 10px #aaa;
+		&:hover .project-mask{
+			visibility: visible;
+			opacity: 0.95;
+		}
+	}
+
+	.project-mask {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: $black;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		display: none;
+		visibility: hidden;
+		transition: visibility 0.5s, 	opacity 0.5s;
+		display: flex;
+		flex-direction: column;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+
+	h3 {
+		color: $white;
+		text-align: center;
+		margin-top: 20px;
+		font-size: 2rem;
+		padding: 10px;
+		background-color: $blue;
+		height: 30px;
+	}
+
+	p {
+		font-size: 1.3rem;
+		text-align: center;
+		box-sizing: border-box;
+		margin-top: 8%;
+		color: $white;
+	}
+
+	.links-container {
+		height: 100%;
+		overflow: hidden;
+		display: flex;
+	}
+
+	a {
+		height: 100%;
+		text-decoration: none;
+		color: $white;
+		text-align: center;
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		&:hover span {
+			color: $blue + 30;
+		}
+	}
+
+	span {
+		font-size: 1.3rem;
+		&.fa:before {
+			margin-bottom: 5px;
+			display: block;
+			font-size: 4rem;
+		}
 	}
 }
