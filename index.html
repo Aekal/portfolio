@@ -135,17 +135,19 @@
 		<section id="kontakt">
 			<div class="section-container">
 				<h2>Kontakt</h2>
-				<div class="contact-info">
-					<p class="fa fa-user">Damian Fiałkiewicz</p>
-					<a class="fa fa-envelope" href="mailto:aekal4@gmail.com">aekal4@gmail.com</a>
-					<p class="fa fa-map-marker">Poznań</p>
+				<div class="contact-container">
+					<div class="contact-info fa fa-id-card-o">
+						<p class="contact-text fa fa-user">Damian Fiałkiewicz</p>
+						<p class="contact-text fa fa-envelope">damian.fialkiewicz@gmail.com</p>
+						<p class="contact-text fa fa-map-marker">Poznań</p>
+					</div>
+					<form action="mail.php" method="post">
+						<label>Imię i nazwisko<input class="field" type="text" required></label>
+						<label>Adres email<input class="field" type="email" required></label>
+						<label>Wiadomość<textarea class="field" rows="10" required></textarea></label>
+						<button type="submit" name="button">Wyślij</button>
+					</form>
 				</div>
-				<form action="mail.php" method="post">
-					<label>Imię i nazwisko<input class="field" type="text" required></label>
-					<label>Adres email<input class="field" type="email" required></label>
-					<label>Wiadomość<textarea class="field" rows="10" required></textarea></label>
-					<button type="submit" name="button">Wyślij</button>
-				</form>
 			</div>
 		</section>
 	</main>
