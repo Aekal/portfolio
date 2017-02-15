@@ -14,15 +14,14 @@ header {
 	height: 100vh;
 
 	nav {
-		display: flex;
-		justify-content: center;
-
-		ul {
-			background-color: rgba($black + 50, 0.8);
-			box-shadow: 1px 1px 10px rgba($black, 0.8);
-			border-bottom-right-radius: 6px;
-			border-bottom-left-radius: 6px;
-		}
+		z-index: 2;
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: rgba($black + 50, 0.8);
+		box-shadow: 1px 1px 10px rgba($black, 0.8);
+		border-bottom-right-radius: 6px;
+		border-bottom-left-radius: 6px;
 
 		li {
 			display: inline-block;
