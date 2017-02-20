@@ -20,46 +20,50 @@ header {
 	};
 
 	.hamburger {
+		display: none;
 		position: absolute;
-		text-indent: 100px;
-		z-index: 100;
-		top: 10px;
+		cursor: pointer;
+		top: 8px;
 		left: 10px;
 		width: 35px;
-		height: 33px;
+		height: 27px;
 		background-color: transparent;
 		border: none;
-		border-top: 5px solid $white - 60;
+		border-top: 5px solid $white - 40;
 		transition: transform 0.3s linear;
+		text-indent: 100px;
+		overflow: hidden;
+
+		@include mobile {
+			display: block;
+		};
+
+		&:focus {
+			border-top: 5px solid $white - 100;
+			outline: none;
+
+			&:before, &:after {
+				border-top: 5px solid $white - 100;
+			}
+		}
 
 		&:before, &:after {
 			content: "";
 			display: block;
 			top: 0;
 			left: 0;
+			top: 6px;
 			width: 100%;
-			transform: translateY(6px);
-			border-top: 5px solid $white - 60;
+			border-top: 5px solid $white - 40;
 			position: absolute;
 		}
 
 		&:after {
-			transform: translateY(18px);
-			transition: transform 0.3s linear;
-		}
-
-		&:focus {
-			transform: rotate(45deg) translateY(5px);
-			border: none;
-			outline: none;
-
-			&:after {
-				transform: rotate(-90deg) translateX(-6px);
-			}
+			top: 17px;
 		}
 	}
 
-	nav {
+	.menu {
 		z-index: 2;
 		position: fixed;
 		left: 50%;
@@ -77,10 +81,17 @@ header {
 		};
 
 		@include mobile {
-			padding-top: 50px;
-			// height: 0;
+			padding-top: 44px;
+			height: 0;
 			overflow: hidden;
+
+			&.open {
+				background-color: rgba($black + 50, 0.9);
+				width: 100%;
+				height: auto;
+			}
 		}
+
 
 		ul {
 			text-align: center;
@@ -189,12 +200,10 @@ header {
 			display: inline-block;
 			text-align: center;
 			font-size: 5rem;
-			line-height: 5rem;
-			text-shadow: 1px 1px 5px $black, 1px 1px 50px $black;
+			text-shadow: 1px 1px 5px $black, 1px 1px 20px $black;
 
 			@include tablet {
 				font-size: 4rem;
-				line-height: 4rem;
 			};
 
 			@include mobile {
@@ -219,12 +228,14 @@ main {
 		width: 90%;
 		max-width: 1300px;
 		margin: 0 auto;
-		padding: 40px 0;
+		padding: 50px 0;
 	}
 }
 
 #o-mnie {
 	background-color: $section1;
+	border-top: 1px solid $section1 - 30;
+	border-bottom: 1px solid $section1 - 30;
 
 	.about {
 		background-color: rgba($white, 0.8);
@@ -317,6 +328,7 @@ main {
 
 #projekty {
 	background-color: $section2;
+	border-bottom: 1px solid $section2 - 30;
 
 	.projects-container {
 		display: flex;
@@ -328,14 +340,14 @@ main {
 		position: relative;
 		margin: 20px;
 		border: 1px solid black;
-		box-shadow: 8px 8px 10px #aaa;
+		box-shadow: 0 0 20px rgba($black, 0.5);
 		&:hover .project-mask{
 			visibility: visible;
 			opacity: 0.95;
 		}
 
 		@include mobile {
-			margin: 20px 0px;
+			margin: 25px 0px;
 		};
 	}
 
@@ -427,6 +439,7 @@ main {
 }
 
 #kontakt {
+	background-color: $section3;
 
 	.contact-container {
 		display: flex;
@@ -435,6 +448,7 @@ main {
 	}
 
 	.contact-info {
+		background-color: rgba($white, 0.8);
 		box-shadow: 2px 2px 10px rgba($black, 0.6);
 		margin: 20px 10px 0 0;
 		box-sizing: border-box;
@@ -496,7 +510,6 @@ main {
 
 		.field {
 			box-sizing: border-box;
-			background-color: $field;
 			font-family: 'Raleway', sans-serif;
 			border-radius: 10px;
 			border: 1px solid $field - 60;
@@ -549,9 +562,10 @@ footer {
 	}
 
 	a {
+		margin: 0 10px;
 		display: inline-block;
 		text-indent: 60px;
-		width: 40px;
+		width: 30px;
 		overflow: hidden;
 		color: $white;
 
