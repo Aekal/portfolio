@@ -1,5 +1,5 @@
-# <a href="#">Portfolio</a>
-My portfolio of finished projects
+# <a href="http://fialkiewicz.pl">Portfolio</a>
+My portfolio page
 
 ### Projects included
 - Bluebox PSD
