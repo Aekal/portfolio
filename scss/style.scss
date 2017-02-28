@@ -1,6 +1,7 @@
 @import "reset";
 @import "colors";
 @import "mixins";
+@import "keyframes";
 
 html {
 	font-size: 16px;
@@ -223,6 +224,32 @@ header {
 		strong {
 			display: block;
 			margin-top: 15px;
+		}
+	}
+
+	.scroll-arrow {
+		position: absolute;
+		cursor: pointer;
+		box-sizing: border-box;
+		padding: 15px;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 20px;
+		display: inline-block;
+		border-radius: 50%;
+		border: 2px solid rgba($white, 0.9);
+		background-color: rgba($black, 0.7);
+
+		&:hover {
+			background-color: rgba($black, 0.8);
+			border: 2px solid rgba($white, 1);
+		}
+
+		span {
+			font-size: 1.5rem;
+			color: rgba($white, 0.9);
+			animation: move 1.5s infinite linear;
+			transform: translateY(20px);
 		}
 	}
 }
@@ -561,12 +588,7 @@ footer {
 	line-height: 1.3rem;
 
 	ul {
-		display: none;
-		margin-bottom: 10px;
-
-		@include mobile {
-			display: block;
-		};
+		margin-bottom: 5px;
 	}
 
 	li {
@@ -579,12 +601,16 @@ footer {
 		text-indent: 60px;
 		width: 30px;
 		overflow: hidden;
-		color: $white;
+		color: $white - 50;
 
 		&:before {
 			text-indent: 0;
 			float: left;
 			font-size: 2rem;
+		}
+
+		&:hover {
+			color: $white;
 		}
 	}
 }
