@@ -345,7 +345,6 @@ main {
 			color: $white;
 			padding: 10px 20px;
 			margin: 5px;
-			cursor: pointer;
 			&:nth-child(5n) {
 				@include tile($blue);
 			}
@@ -376,18 +375,23 @@ main {
 	}
 
 	.project {
-		position: relative;
 		margin: 20px;
-		border: 1px solid black;
-		box-shadow: 0 0 20px rgba($black, 0.5);
-		&:hover .project-mask{
-			visibility: visible;
-			opacity: 0.95;
-		}
+		box-shadow: 0 2px 20px rgba($black, 0.7);
 
 		@include mobile {
 			margin: 25px 0px;
 		};
+	}
+
+	.project-content {
+		border: 1px solid black;
+		border-bottom: none;
+		position: relative;
+
+		&:hover .project-mask{
+			visibility: visible;
+			opacity: 0.9;
+		}
 	}
 
 	.project-mask {
@@ -398,14 +402,13 @@ main {
 		width: 100%;
 		height: 100%;
 		opacity: 0;
-		display: none;
 		visibility: hidden;
 		transition: visibility 0.5s, 	opacity 0.5s;
-		display: flex;
-		flex-direction: column;
+		text-align: center;
 	}
 
 	img {
+		display: block;
 		width: 100%;
 		height: 100%;
 	}
@@ -418,62 +421,94 @@ main {
 		font-size: 2rem;
 		padding: 10px;
 		background-color: $blue;
-		height: 30px;
 
 		@include mobile {
+			padding: 5px;
 			margin-top: 10px;
 			font-size: 1.3rem;
 		};
 	}
 
+	span {
+		text-transform: uppercase;
+		display: inline-block;
+		border-bottom: 1px solid $white;
+		color: $white;
+		font-size: 0.8rem;
+		margin: 5% 0 5px 0;
+		line-height: 1.5rem;
+
+		@include mobile {
+			font-size: 0.7rem;
+			line-height: 1rem;
+		};
+
+		@include xs {
+			margin: 2% 0;
+		};
+	}
+
 	p {
-		font-size: 1.3rem;
+		font-size: 1.2rem;
+		line-height: 1.2rem;
 		text-align: center;
 		box-sizing: border-box;
-		margin-top: 8%;
+		padding: 0 10%;
 		color: $white;
 
 		@include mobile {
-			padding: 0 5px;
-			margin-top: 6%;
 			font-size: 1rem;
+			padding: 0 5%;
+		};
+
+		@include xs {
+			padding: 0 2%;
+			line-height: 1rem;
+			font-size: 0.9rem;
 		};
 	}
 
 	.links-container {
-		height: 100%;
-		overflow: hidden;
 		display: flex;
 	}
 
 	a {
-		height: 100%;
-		text-decoration: none;
-		color: $white;
-		text-align: center;
-		width: 100%;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		&:hover span {
-			color: $blue + 30;
-		}
-	}
-
-	span {
+		display: block;
 		font-size: 1.3rem;
+		font-family: 'Open Sans', sans-serif;
+		text-decoration: none;
+		height: 35px;
+		color: $white;
+		background-color: $skyblue - 20;
+		border: 1px solid $skyblue - 70;
+		text-align: center;
+		line-height: 35px;
+		width: 50%;
+		transition: all 0.5s;
 
 		@include mobile {
-			font-size: 1.1rem;
+			font-size: 1.2rem;
 		};
-		&.fa:before {
-			margin-bottom: 5px;
-			display: block;
-			font-size: 4rem;
 
-			@include mobile {
-				font-size: 2.5rem;
-			};
+		&:hover {
+			background-color: $skyblue - 50;
+			box-shadow: inset 0 0 15px $skyblue - 100;
+		}
+
+		&:focus {
+			box-shadow: inset 0 0 15px $skyblue - 100;
+		}
+
+		&:last-child {
+			border-left: none;
+		}
+
+		&:before {
+			line-height: normal;
+			font-family: 'FontAwesome';
+			font-size: 1.5rem;
+			display: inline-block;
+			margin-right: 10px;
 		}
 	}
 }
@@ -573,6 +608,7 @@ main {
 			padding: 10px;
 			width: 200px;
 			cursor: pointer;
+			transition: 0.3s;
 			&:hover {
 				background-color: $skyblue - 30;
 			}
