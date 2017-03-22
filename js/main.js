@@ -1,14 +1,24 @@
-$(document).ready(function() {
-	//Scroll on nav links click
-	$(".nav-link").on("click", function(e) {
+$(function() {
+	//Cache DOM
+	var $menu = $("#menu");
+
+	$("#menu-list").on("click", "a", function(e) {
+		//Scroll to section
 		var section = $(this).attr("href");
 		e.preventDefault();
 		scrollToSection(section);
+		//Hide mobile menu
+		if ($(window).width() <= 650) {
+			$menu.toggleClass("open");
+		}
 	});
 
-	//Scroll on arrow click
-	$(".scroll-arrow").on("click", function() {
+	$("#scroll-arrow").on("click", function() {
 		scrollToSection("#o-mnie");
+	});
+
+	$("#hamburger").on("click", function() {
+		$menu.toggleClass("open");
 	});
 
 	function scrollToSection(section) {
@@ -16,19 +26,4 @@ $(document).ready(function() {
 			scrollTop: $(section).offset().top
 		}, 500);
 	}
-
-	//Cache menu
-	var $menu = $(".menu");
-
-	//Hamburger menu toggle
-	$(".hamburger").on("click", function() {
-		$menu.toggleClass("open");
-	});
-
-	//Hide mobile menu after click on linked
-	$(".nav-link").on("click", function() {
-		if ($(window).width() <= 650) {
-			$menu.toggleClass("open");
-		}
-	});
 });
