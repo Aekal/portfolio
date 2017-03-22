@@ -1,4 +1,6 @@
 # <a href="http://fialkiewicz.pl">Portfolio</a>
+![Portfolio image](http://fialkiewicz.pl/img/projects/portfolio.jpg)
+
 My portfolio page
 
 ### Projects included
