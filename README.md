@@ -13,6 +13,7 @@ My portfolio page
 ### Technologies used:
 - HTML5, CSS3, JS
 - jQuery
+- Ajax
 - SASS
 - Git
 - Gulp

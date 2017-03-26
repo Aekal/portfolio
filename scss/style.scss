@@ -613,6 +613,22 @@ main {
 				background-color: $skyblue - 30;
 			}
 		}
+
+		.status {
+			margin-top: 20px;
+			text-align: center;
+			padding: 20px;
+		}
+
+		.success {
+			color: $green;
+			border: 1px solid $green;
+		}
+
+		.error {
+			color: $red;
+			border: 1px solid $red;
+		}
 	}
 }
 
