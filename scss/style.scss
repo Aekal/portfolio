@@ -214,7 +214,7 @@ header {
 			font-size: 5rem;
 			text-shadow: 1px 1px 5px $black, 1px 1px 20px $black;
 			opacity: 0;
-			transition: transform, opacity 1.5s;
+			transition: transform 1.5s, opacity 1.5s;
 			transform: translateY(15px);
 
 			&.animated {
@@ -278,7 +278,7 @@ main {
 		margin: 0 auto;
 		padding: 50px 0;
 		transform: translateY(30px);
-		transition: transform, opacity ease 1.5s;
+		transition: transform ease 1.5s, opacity ease 1.5s;
 
 		&.animated {
 			transform: translateY(0);
