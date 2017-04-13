@@ -131,6 +131,10 @@ header {
 			padding: 15px;
 			font-size: 1.2rem;
 			position: relative;
+
+			&.active {
+				color: $skyblue + 40;
+			}
 		}
 	}
 
@@ -173,19 +177,17 @@ header {
 			}
 			&.fa {
 				font-size: 1.7rem;
+				border: 2px solid rgba(255, 255, 255, 0.6);
 			}
 			&.fa-facebook {
-				border: 1px solid rgba($fb - 50, 80%);
 				padding-left: 10px;
 				background-color: $fb;
 			}
 			&.fa-github {
-				border: 1px solid #2B2B2B;
 				text-indent: 30px;
 				background-color: $black;
 			}
 			&.fa-linkedin {
-				border: 1px solid rgba($linked - 50, 80%);
 				background-color: $linked;
 			}
 		}
@@ -211,6 +213,14 @@ header {
 			letter-spacing: 1px;
 			font-size: 5rem;
 			text-shadow: 1px 1px 5px $black, 1px 1px 20px $black;
+			opacity: 0;
+			transition: 1.5s;
+			transform: translateY(15px);
+
+			&.animated {
+				transform: translateY(0);
+				opacity: 1;
+			}
 
 			@include tablet {
 				font-size: 4rem;
@@ -262,19 +272,27 @@ main {
 	}
 
 	.section-container {
+		opacity: 0;
 		width: 92%;
 		max-width: 1300px;
 		margin: 0 auto;
 		padding: 50px 0;
+		transform: translateY(30px);
+		transition: all ease 1.5s;
+
+		&.animated {
+			transform: translateY(0);
+			opacity: 1;
+		}
 	}
 }
 
-#o-mnie {
+#about {
 	background-color: $section1;
 	border-top: 1px solid $section1 - 30;
 	border-bottom: 1px solid $section1 - 30;
 
-	.about {
+	.about-text {
 		background-color: rgba($white, 0.8);
 		padding: 20px;
 		border-radius: 20px;
@@ -364,7 +382,7 @@ main {
 	}
 }
 
-#projekty {
+#projects {
 	background-color: $section2;
 	border-bottom: 1px solid $section2 - 30;
 
@@ -513,7 +531,7 @@ main {
 	}
 }
 
-#kontakt {
+#contact {
 	background-color: $section3;
 
 	.contact-container {
