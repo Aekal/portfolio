@@ -2,6 +2,7 @@ $(function() {
 	//Cache DOM
 	var $menu = $("#menu");
 	var $form = $("#form");
+	var $navLink = $(".nav-link");
 
 	$("#menu-list").on("click", "a", function(e) {
 		//Scroll to section
@@ -15,7 +16,7 @@ $(function() {
 	});
 
 	$("#scroll-arrow").on("click", function() {
-		scrollToSection("#o-mnie");
+		scrollToSection("#about");
 	});
 
 	$("#hamburger").on("click", function() {
@@ -43,4 +44,42 @@ $(function() {
 		});
 	});
 
+	//Waypoints for highlight active link & fade in sections
+		$navLink.each(function() {
+			var $link = $(this);
+			var sectionName = $link.attr("href");
+			var $section = $(sectionName);
+			//Fade in animation
+			$section.waypoint(function(direction) {
+				if (direction === "down") {
+					if (sectionName != "#start") {
+						$section.find(".section-container").addClass("animated");
+					} else {
+						$section.find("h1").addClass("animated");
+					}
+				}
+			},
+			{
+				offset: '85%'
+			});
+			//Highlight active link
+			$section.waypoint(function(direction) {
+				if (direction === "down") {
+					$navLink.removeClass("active");
+					$link.addClass("active");
+				}
+			},
+			{
+				offset: '40%'
+			});
+			$section.waypoint(function(direction) {
+				if (direction === "up") {
+					$navLink.removeClass("active");
+					$link.addClass("active");
+				}
+			},
+			{
+				offset: '-40%'
+			});
+		});
 });
