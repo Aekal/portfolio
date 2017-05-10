@@ -9,6 +9,7 @@ My portfolio page
 - Slot machine game
 - Sticky notes
 - CSS animations
+- Places reviews
 
 ### Technologies used:
 - HTML5, CSS3, JS
