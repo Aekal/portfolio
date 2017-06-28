@@ -640,13 +640,13 @@ main {
 		}
 
 		.success {
-			color: $green;
 			border: 1px solid $green;
+			background-color: #f7fff7;
 		}
 
 		.error {
-			color: $red;
 			border: 1px solid $red;
+			background-color: #fff7f7;
 		}
 	}
 }
