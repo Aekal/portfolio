@@ -3,7 +3,6 @@ $(function() {
 	var $menu = $("#menu");
 	var $form = $("#form");
 	var $navLink = $(".nav-link");
-
 	$("#menu-list").on("click", "a", function(e) {
 		//Scroll to section
 		var section = $(this).attr("href");
@@ -43,7 +42,7 @@ $(function() {
 				$field.removeClass("success").addClass("error");
 			}
 		}
-
+		console.log('HEHE');
 		function checkName() {
 			var name = $textField.val().trim();
 			if (name.length >= 3) {

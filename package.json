@@ -8,17 +8,20 @@
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.0"
+    "gulp-uglify": "^3.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/Aekal/portfolio.git"
   },
-  "author": "",
+  "author": "Damian Fiałkiewicz",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Aekal/portfolio/issues"
