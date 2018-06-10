@@ -9,7 +9,7 @@ html {
 }
 
 header {
-	background: url("../img/bg-large.jpg") no-repeat center;
+	background: url("/assets/img/bg-large.jpg") no-repeat center;
 	background-size: cover;
 	background-attachment: fixed;
 	height: 100vh;
@@ -17,11 +17,11 @@ header {
 	position: relative;
 
 	@include tablet {
-		background-image: url("../img/bg-medium.jpg");
+		background-image: url("/assets/img/bg-medium.jpg");
 	}
 
 	@include mobile {
-		background-image: url("../img/bg-small.jpg");
+		background-image: url("/assets/img/bg-small.jpg");
 		background-attachment: scroll;
 		height: 500px;
 	};

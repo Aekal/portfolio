@@ -11,14 +11,14 @@ gulp.task('serve', ['sass'], function() {
         server: "./"
     });
 
-    gulp.watch("scss/*.scss", ['sass']);
     gulp.watch("*.html").on('change', browserSync.reload);
-    gulp.watch("js/*.js").on('change', browserSync.reload);
+    gulp.watch("assets/scss/*.scss", ['sass']);
+    gulp.watch("assets/js/*.js").on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("scss/style.scss")
+    return gulp.src("assets/scss/style.scss")
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', function(err) { //Compile and compress sass
             console.error(err.message);
@@ -27,8 +27,8 @@ gulp.task('sass', function() {
         }))
         .pipe(autoprefixer({
           browsers: ['Safari >= 6.1', 'IE >= 10', 'Firefox >= 28'], cascade: false}))
-        .pipe(sourcemaps.write("./maps"))
-        .pipe(gulp.dest("./css"))
+        .pipe(sourcemaps.write("dist/css/maps"))
+        .pipe(gulp.dest("dist/css"))
         .pipe(browserSync.stream());
 });
 
