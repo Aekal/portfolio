@@ -9,13 +9,23 @@ var concat        = require('gulp-concat');
 gulp.task('serve', ['build'], function() {
     browserSync.init({
         notify: false,
-        server: "./"
+        server: "./dist"
     });
 
-    gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch("src/*.html", ['html']).on('change', browserSync.reload);
     gulp.watch("src/scss/*.scss", ['sass']);
     gulp.watch("src/js/*.js", ['js']).on('change', browserSync.reload);
 });
+
+gulp.task('html', function() {
+    return gulp.src("src/index.html")
+        .pipe(gulp.dest("dist"))
+});
+
+gulp.task('assets', function() {
+    return gulp.src("assets/**/*")
+        .pipe(gulp.dest("dist/assets"))
+})
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
@@ -39,6 +49,6 @@ gulp.task('js', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['sass', 'js']);
+gulp.task('build', ['sass', 'js', 'html', 'assets']);
 
 gulp.task('default', ['serve']);
