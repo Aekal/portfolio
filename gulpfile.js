@@ -27,7 +27,7 @@ gulp.task('sass', function() {
         }))
         .pipe(autoprefixer({
           browsers: ['Safari >= 6.1', 'IE >= 10', 'Firefox >= 28'], cascade: false}))
-        .pipe(sourcemaps.write("dist/css/maps"))
+        .pipe(sourcemaps.write("maps"))
         .pipe(gulp.dest("dist/css"))
         .pipe(browserSync.stream());
 });
