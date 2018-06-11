@@ -240,6 +240,8 @@ header {
 	.scroll-arrow {
 		position: absolute;
 		cursor: pointer;
+		min-width: 55px;
+		min-height: 55px;
 		box-sizing: border-box;
 		padding: 15px;
 		left: 50%;
